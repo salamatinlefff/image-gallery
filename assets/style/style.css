@@ -1,0 +1,159 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1100px;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+.gallery-name {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-right: 10px;
+  width: 100%;
+  text-transform: uppercase;
+  font-size: 20px;
+  color: rgb(231, 93, 1);
+}
+
+.gallery-name_icon {
+  margin-right: 7px;
+  color: rgb(75, 176, 254);
+}
+
+.header__search-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 300px;
+  width: 100%;
+  height: 40px;
+  padding: 0 10px;
+  border-radius: 5px;
+  background-color: rgb(247, 245, 245);
+}
+
+.search__input {
+  min-width: 110px;
+  width: 100%;
+  margin-left: auto;
+  height: 30px;
+  outline: 0;
+  border: 0;
+  border-radius: 5px;
+  padding: 0 10px;
+  margin-right: 5px;
+  background-color: rgb(247, 245, 245);
+  transition: background-color 0.2s ease-in-out;
+}
+
+.search__input::placeholder {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.search__input:focus {
+  background-color: rgb(255, 255, 255);
+}
+
+.search__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 20px;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.search__button-svg {
+  width: 20px;
+  height: 20px;
+  color: rgb(75, 176, 254);
+  transition: color 0.3s ease-in-out, transform 0.1s ease-in-out;
+}
+
+.search__button-svg:hover {
+  color: rgb(11, 103, 184);
+}
+
+.search__button-svg:active {
+  transform: scale(0.9);
+}
+
+.main {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1100px;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+.card__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 20px;
+}
+
+.card__image-wrapper {
+  max-width: 320px;
+  border-radius: 5px;
+}
+
+.card__image {
+  cursor: pointer;
+  border-radius: 5px;
+  width: 100%;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card__image:hover{
+  transform: scale(1.1);
+}
+
+.footer {
+  max-width: 1100px;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+.footer__list {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.footer__item {
+font-weight: 600;
+}
+
+.item-github {
+  text-transform: uppercase;
+  color: rgb(3, 3, 177);
+}
+
+.item-data {
+  color: rgb(3, 3, 177);
+
+}
+
+.item-rsschool {
+  text-transform: uppercase;
+  color: rgb(3, 3, 177);
+}
