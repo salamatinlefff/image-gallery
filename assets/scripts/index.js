@@ -4,4 +4,4 @@ import renderCards from './renderCards.js';
 
 
 search()
-renderCards(await getSearch('popular'))
+renderCards(await getSearch())
