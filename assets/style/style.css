@@ -35,6 +35,35 @@
   letter-spacing: 1.5px;
 }
 
+body {
+  position: relative;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.body__scrollbar-hidden {
+  overflow: hidden;
+  margin-right: 15px;
+  background-color: rgba(0, 0, 0, 0.95);
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgba(37, 37, 37, 0.95);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.95);
+  background-color: rgb(142, 142, 143);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(255, 255, 255);
+}
+
 a {
   text-decoration: none;
 }
@@ -217,12 +246,14 @@ right: 0;
 bottom: 0;
 left: 0;
 opacity: 0;
+padding-right: 0;
 background-color: rgba(0, 0, 0, 0.95);
 transition: opacity 0.4s ease-in-out;
 }
 
 .popup__visible {
   opacity: 1;
+  margin-right: 14.5px;
 }
 
 .popup__image{
