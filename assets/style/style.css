@@ -368,7 +368,6 @@ font-weight: 600;
 }
 
 .item-github {
-  text-transform: uppercase;
   color: rgb(3, 3, 177);
   transition: color 0.3s ease-in-out;
 }
@@ -382,7 +381,7 @@ font-weight: 600;
 }
 
 .item-rsschool {
-  text-transform: uppercase;
+  text-transform: capitalize;
   color: rgb(3, 3, 177);
   transition: color 0.3s ease-in-out;
 }
