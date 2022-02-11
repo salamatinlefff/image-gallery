@@ -334,21 +334,6 @@ transition: opacity 0.4s ease-in-out;
   transform: scale(0.9);
 }
 
-@media (max-width: 768px) {
-  .card__image:hover{
-    transform: none;
-  }
-}
-
-@media (max-width: 350px) {
-  .search__clear-button {
-    right: 35px;
-  }
-  .main {
-    padding: 20px 0;
-  }
-}
-
 .footer {
   max-width: 1100px;
   padding: 20px;
@@ -388,4 +373,31 @@ font-weight: 600;
 
 .item-rsschool:hover {
   color: rgb(238, 40, 179);
+}
+
+@media (max-width: 768px) {
+  .card__image:hover{
+    transform: none;
+  }
+  
+  .body__scrollbar-hidden {
+    overflow: hidden;
+    margin-right: 0;
+    background-color: none;
+  }
+  .popup__visible {
+    opacity: 1;
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 350px) {
+  .search__clear-button {
+    right: 35px;
+  }
+
+  .main {
+    padding: 20px 0;
+  }
+
 }
