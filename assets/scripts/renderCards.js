@@ -6,7 +6,7 @@ const renderCards = async(data) => {
       let div = document.createElement('div')
       div.className = 'card__image-wrapper'
       let img = document.createElement('img')
-      img.className = 'card__image-wrapper'
+      img.className = 'card__image'
       img.setAttribute('src', item.urls.regular)
       img.setAttribute('width', 320)
       img.setAttribute('height', 220)
@@ -18,7 +18,6 @@ const renderCards = async(data) => {
     .then(cards => {
       cardsWrapper.append(...cards)
     })
-
 }
 
 export default renderCards;

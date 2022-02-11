@@ -45,6 +45,7 @@ a {
   z-index: 2;
   display: flex;
   justify-content: space-between;
+  min-width: 320px;
   max-width: 1100px;
   padding: 10px 25px;
   margin: 0 auto;
@@ -69,6 +70,7 @@ a {
 }
 
 .header__search-form {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -91,16 +93,53 @@ a {
   padding: 0 10px;
   margin-right: 5px;
   background-color: rgb(247, 245, 245);
+  color: rgb(83, 83, 83);
   transition: background-color 0.2s ease-in-out;
 }
 
 .search__input::placeholder {
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
 }
 
 .search__input:focus {
   background-color: rgb(255, 255, 255);
+}
+
+.search__clear-button {
+  position: absolute;
+  top: 0;
+  right: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 20px;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  cursor: pointer;
+  opacity: 0;
+  background-color: transparent;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.visible {
+  opacity: 1;
+}
+
+.search__clear-button-svg {
+  width: 20px;
+  height: 20px;
+  color: rgb(75, 176, 254);
+  transition: color 0.3s ease-in-out, transform 0.1s ease-in-out;
+}
+
+.search__clear-button-svg:hover {
+  color: rgb(11, 103, 184);
+}
+
+.search__clear-button-svg:active {
+  transform: scale(0.9);
 }
 
 .search__button {
@@ -133,6 +172,7 @@ a {
 .main {
   display: flex;
   justify-content: space-between;
+  min-width: 320px;
   max-width: 1100px;
   padding: 20px;
   margin: 0 auto;
@@ -155,14 +195,28 @@ a {
 .card__image {
   cursor: pointer;
   border-radius: 5px;
-  width: 100%;
-  height: 100%;
+  max-width: 320px;
   object-fit: cover;
   transition: transform 0.3s ease-in-out;
 }
 
 .card__image:hover{
   transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .card__image:hover{
+    transform: none;
+  }
+}
+
+@media (max-width: 350px) {
+  .search__clear-button {
+    right: 35px;
+  }
+  .main {
+    padding: 20px 0;
+  }
 }
 
 .footer {
@@ -173,7 +227,9 @@ a {
 
 .footer__list {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 20px;
   list-style: none;
 }
 
@@ -184,14 +240,23 @@ font-weight: 600;
 .item-github {
   text-transform: uppercase;
   color: rgb(3, 3, 177);
+  transition: color 0.3s ease-in-out;
+}
+
+.item-github:hover {
+  color: rgb(238, 40, 179);
 }
 
 .item-data {
   color: rgb(3, 3, 177);
-
 }
 
 .item-rsschool {
   text-transform: uppercase;
   color: rgb(3, 3, 177);
+  transition: color 0.3s ease-in-out;
+}
+
+.item-rsschool:hover {
+  color: rgb(238, 40, 179);
 }
