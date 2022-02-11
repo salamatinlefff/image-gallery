@@ -1,3 +1,4 @@
+import renderPopup from './renderPopup.js';
 
 const renderCards = async(data) => {
     const cardsWrapper = document.querySelector('.card__wrapper');
@@ -8,10 +9,16 @@ const renderCards = async(data) => {
       let img = document.createElement('img')
       img.className = 'card__image'
       img.setAttribute('src', item.urls.regular)
+      img.setAttribute('alt', item.alt_description)
       img.setAttribute('width', 320)
       img.setAttribute('height', 220)
       
       div.append(img);
+
+      div.addEventListener('click', () => {
+        renderPopup(item, cardsWrapper);
+        document.body.style.overflow = 'hidden';
+      })
 
       return div
     }))
