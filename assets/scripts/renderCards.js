@@ -17,8 +17,6 @@ const renderCards = async(data) => {
 
       div.addEventListener('click', () => {
         renderPopup(item, cardsWrapper);
-        // document.body.style.overflow = 'hidden';
-        // document.body.style.width = '100%';
         document.body.classList.add('body__scrollbar-hidden')
       })
 

@@ -1,6 +1,5 @@
 export const closeOverlay = (overlay) => {
   overlay.classList.remove('popup__visible');
-  // document.body.style.overflow = '';
   document.body.classList.remove('body__scrollbar-hidden')
 
 
