@@ -4,8 +4,9 @@ import { search as getSearch} from './services.js';
 const searchForm = document.querySelector('.header__search-form');
 const searchClearButton = document.querySelector('.search__clear-button');
 
-
-
+export const inputFocus = () => {
+  searchForm[0].focus()
+}
 
 const clearSearch = () => {
   searchForm[0].value = '';
