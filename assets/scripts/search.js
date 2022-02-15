@@ -10,7 +10,7 @@ export const inputFocus = () => {
   searchForm[0].focus()
 };
 
-const isEmpty = query => {
+const isEmptySearchForm = query => {
   if(query) {
     return false
   } else {
@@ -18,10 +18,18 @@ const isEmpty = query => {
   }
 };
 
-const addTextIsEmpty = () => {
+const isEmptyData = (data) => {
+  if(data.total_pages === 0) {
+    return true
+  } else {
+    return false
+  }
+}
+
+const addTextIsEmpty = (text) => {
   const warning = document.createElement('p');
   warning.className = 'card__text';
-  warning.textContent = 'Please enter a search query before searching';
+  warning.textContent = text ? text : 'Please enter a search query before searching';
 
   cardWrapper.innerHTML = '';
   cardWrapper.append(warning);
@@ -67,11 +75,15 @@ searchForm.addEventListener('input', () => {
 const search = () => {
   searchForm.addEventListener('submit', async event => {
     event.preventDefault();
+    
     const query = searchForm[0].value;
+    const isEmptyQuery = isEmptyData(await getSearch(query))
 
-    if(isEmpty(query)) {
+    if(isEmptySearchForm(query)) {
       cardWrapper.classList.add('card_hide');
       setTimeout(addTextIsEmpty, 300)
+    } else if(isEmptyQuery) {
+      addTextIsEmpty(`Your search "${query}" did not match any listings.`)
     } else {
       renderCards(await getSearch(query));
     }

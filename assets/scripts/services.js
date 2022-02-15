@@ -17,16 +17,22 @@ export const randomPage = (max = 15) => {
   return randomInt(max);
 }
 
+const removeSpaces = query => {
+  return query.trim().replace(/\s/g, '-');
+}
+
 export const getData = async(url) => {
   const res = await fetch(url);
   const data = await res.json();
-  console.log('data :', data);
   
   return data
 };
 
 export const search = (query = 'spring', page = '1', perPage = 30, orientation = 'landscape') => {
+  query = removeSpaces(query);
+
   const url = `${BASE_URL}search/photos?query=${query}&page=${page}&per_page=${perPage}&orientation=${orientation}&client_id=${API_KEY}`;
+  console.log('url :', url);
 
   return getData(url)
 }
