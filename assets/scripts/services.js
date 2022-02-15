@@ -32,7 +32,6 @@ export const search = (query = 'spring', page = '1', perPage = 30, orientation =
   query = removeSpaces(query);
 
   const url = `${BASE_URL}search/photos?query=${query}&page=${page}&per_page=${perPage}&orientation=${orientation}&client_id=${API_KEY}`;
-  console.log('url :', url);
 
   return getData(url)
 }
