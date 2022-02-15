@@ -108,6 +108,10 @@ a {
   color: rgb(75, 176, 254);
 }
 
+.header__home {
+  cursor: pointer;
+}
+
 .header__search-form {
   position: relative;
   display: flex;

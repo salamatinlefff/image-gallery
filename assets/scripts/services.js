@@ -13,14 +13,14 @@ export const randomQuery = () => {
   return requests[randomInt(max)];
 }
 
-export const randomPage = () => {
-  const max = 15;
+export const randomPage = (max = 15) => {
   return randomInt(max);
 }
 
 export const getData = async(url) => {
   const res = await fetch(url);
   const data = await res.json();
+  console.log('data :', data);
   
   return data
 };

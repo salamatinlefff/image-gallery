@@ -1,7 +1,8 @@
 import renderCards from './renderCards.js';
-import { search as getSearch} from './services.js';
+import { randomPage, search as getSearch} from './services.js';
 
 const cardWrapper = document.querySelector('.card__wrapper');
+const homeLink = document.querySelector('.header__home');
 const searchForm = document.querySelector('.header__search-form');
 const searchClearButton = document.querySelector('.search__clear-button');
 
@@ -36,6 +37,11 @@ const clearSearch = () => {
   searchForm[0].value = '';
   searchClearButton.classList.remove('visible');
 };
+
+homeLink.addEventListener('click', async() => {
+  searchForm[0].value = '';
+  renderCards(await getSearch('kitten', randomPage(131)))
+})
 
 searchClearButton.addEventListener('click', event => {
   event.preventDefault();
