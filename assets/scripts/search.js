@@ -1,12 +1,36 @@
 import renderCards from './renderCards.js';
 import { search as getSearch} from './services.js';
 
+const cardWrapper = document.querySelector('.card__wrapper');
 const searchForm = document.querySelector('.header__search-form');
 const searchClearButton = document.querySelector('.search__clear-button');
 
 export const inputFocus = () => {
   searchForm[0].focus()
-}
+};
+
+const isEmpty = query => {
+  if(query) {
+    return false
+  } else {
+    return true
+  }
+};
+
+const addTextIsEmpty = () => {
+  const warning = document.createElement('p');
+  warning.className = 'card__text';
+  warning.textContent = 'Please enter a search query before searching';
+
+  cardWrapper.innerHTML = '';
+  cardWrapper.append(warning);
+
+  warning.addEventListener('click', () => {
+    searchForm[0].focus();
+  });
+
+  cardWrapper.classList.remove('card_hide');
+};
 
 const clearSearch = () => {
   searchForm[0].value = '';
@@ -38,8 +62,13 @@ const search = () => {
   searchForm.addEventListener('submit', async event => {
     event.preventDefault();
     const query = searchForm[0].value;
-    
-    renderCards(await getSearch(query));
+
+    if(isEmpty(query)) {
+      cardWrapper.classList.add('card_hide');
+      setTimeout(addTextIsEmpty, 300)
+    } else {
+      renderCards(await getSearch(query));
+    }
   })
 };
 
